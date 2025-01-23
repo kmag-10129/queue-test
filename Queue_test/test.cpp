@@ -63,5 +63,35 @@ namespace QueueTest {
 	TEST(QueueInput, t_StrInput) {
 		EXPECT_EQ(SUCCESS, test_queue.Queue_add("hello")); // should work
 	}
+
+	// more significant test using another prefilled queue:
+	// - check that the queue is NOT empty at the beginning
+	// - append -6, 20, b, ???!!!
+	// - dequeue four times
+	// - check the size (should be 5)
+	// - check the first item in the queue (should be 144)
+	// - dequeue three more times
+	// - check the size (should be 2)
+	// - check the first item in the queue (should be b)
+	TEST(EnvQueueTest, t_EnvTest2) {
+		MyQueue env_queue_1({ "apple", "1", "banana", "wizard", "144" }); // used for testing with a prefilled queue
+		EXPECT_FALSE(env_queue_1.Queue_empty()); // this should be false as on initialization queue is {"apple", "1", "banana", "wizard", "144"}
+		EXPECT_EQ(SUCCESS, env_queue_1.Queue_add(-6)); // add a -6
+		EXPECT_EQ(SUCCESS, env_queue_1.Queue_add("20")); // add a 20
+		EXPECT_EQ(SUCCESS, env_queue_1.Queue_add("b")); // add a b
+		EXPECT_EQ(SUCCESS, env_queue_1.Queue_add("???!!!")); // add a ???!!!
+		// dequeue four times
+		for (int i = 0; i < 4; i++) {
+			EXPECT_EQ(SUCCESS, env_queue_1.Queue_remove());
+		}
+		EXPECT_EQ(5, env_queue_1.Queue_get_size()); // size should be 5
+		EXPECT_EQ("144", env_queue_1.Queue_at_front()); // is the element at the front a 144?
+		// dequeue three more times
+		for (int i = 0; i < 3; i++) {
+			EXPECT_EQ(SUCCESS, env_queue_1.Queue_remove());
+		}
+		EXPECT_EQ(2, env_queue_1.Queue_get_size()); // size should now be a 2
+		EXPECT_EQ("b", env_queue_1.Queue_at_front()); // is the element at the front a b?
+	}
 }
 
