@@ -1,5 +1,5 @@
 Notes:
-- Programmed in Visual Studio 2022
+- Programmed in C++ using Visual Studio 2022
 - There is no actual executable part attached to this program. **All functionality is called using the test script.**
 - Queue functionality is implemented using a **vector** object type. This allows for a queue that can dynamically change size, a feature that I believe is more useful for queues in the more "general" definition.
 
