@@ -7,5 +7,8 @@ bool MyQueue::Queue_empty(){
 }
 
 ExecStatus MyQueue::Queue_add(int input) {
-	return FAILURE; // just so that the test can actually run. todo: implement
+
+	Elements.push_back(input);
+	return SUCCESS;
+	//return FAILURE; // just so that the test can actually run. todo: implement
 }
