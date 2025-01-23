@@ -17,6 +17,16 @@ class MyQueue
 		vector<int> Elements;
 
 	public:
+		// empty constructor
+		MyQueue(){
+		
+		}
+
+		// constructor for when there's input elements available
+		MyQueue(vector<int> inputElems) {
+			Elements = inputElems;
+		}
+
 		// is queue empty function:
 		// should return true if the Queue object has no elements in it, otherwise return false
 		bool Queue_empty();
