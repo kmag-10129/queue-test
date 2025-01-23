@@ -34,9 +34,9 @@ namespace QueueTest {
 
 	// next test is to check the first element of the queue
 	TEST(QueueAdd, t_QueueFrontCheckSuccess) {
-		EXPECT_EQ(SUCCESS, test_queue.Queue_add(1)); // add a 1
 		EXPECT_EQ(SUCCESS, test_queue.Queue_add(2)); // add a 2
-		EXPECT_EQ(1, test_queue.Queue_at_front()); // is the element at the front a 1?
+		EXPECT_EQ(SUCCESS, test_queue.Queue_add(1)); // add a 1
+		EXPECT_EQ(2, test_queue.Queue_at_front()); // is the element at the front a 2?
 	}
 
 }

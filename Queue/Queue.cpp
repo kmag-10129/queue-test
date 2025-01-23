@@ -23,3 +23,7 @@ ExecStatus MyQueue::Queue_remove() {
 	return SUCCESS;
 	//return FAILURE; // just so that the test can actually run. todo: implement
 }
+
+int MyQueue::Queue_at_front() {
+	return Elements.front();
+}

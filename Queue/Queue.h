@@ -41,4 +41,7 @@ class MyQueue
 
 		// get queue size function
 		int Queue_get_size();
+
+		// get first element in the queue
+		int Queue_at_front();
 };
