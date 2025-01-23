@@ -24,4 +24,7 @@ class MyQueue
 		// add to queue function:
 		// adds the input as the LAST element in the queue.
 		ExecStatus Queue_add(int input);
+
+		// get queue size function
+		int Queue_get_size();
 };
