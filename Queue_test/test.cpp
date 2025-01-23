@@ -12,5 +12,11 @@ namespace QueueTest {
 	TEST(QueueAdd, t_AddOneElementSuccess) {
 		EXPECT_EQ(SUCCESS, queue.Queue_add(1));
 	}
+
+	// next test is to check if queue IS NOT empty after adding elements
+	TEST(QueueEmpty, t_QueueIsNotEmptyPostAdd) {
+		EXPECT_EQ(SUCCESS, queue.Queue_add(1));
+		EXPECT_FALSE(queue.Queue_empty());
+	}
 }
 
