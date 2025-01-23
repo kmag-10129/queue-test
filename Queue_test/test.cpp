@@ -18,5 +18,12 @@ namespace QueueTest {
 		EXPECT_EQ(SUCCESS, queue.Queue_add(1));
 		EXPECT_FALSE(queue.Queue_empty());
 	}
+
+	// next test is to check the queue size
+	TEST(QueueSize, t_QueueSizeCorrect) {
+		EXPECT_EQ(SUCCESS, queue.Queue_add(1));
+		EXPECT_EQ(1, queue.Queue_size());
+	}
+
 }
 
