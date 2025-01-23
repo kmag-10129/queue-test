@@ -7,5 +7,10 @@ namespace QueueTest {
 	TEST(QueueEmpty, t_QueueIsEmpty) {
 		EXPECT_TRUE(queue.Queue_empty());
 	}
+
+	// next test is to check adding items to the end of the queue
+	TEST(QueueAdd, t_AddOneElementSuccess) {
+		EXPECT_EQ(SUCCESS, queue.Queue_add(1));
+	}
 }
 

@@ -3,6 +3,12 @@
 
 using namespace std;
 
+enum ExecStatus {
+	SUCCESS,
+	FAILURE,
+	ERROR
+};
+
 class MyQueue 
 {
 	private:
@@ -14,4 +20,8 @@ class MyQueue
 		// is queue empty function:
 		// should return true if the Queue object has no elements in it, otherwise return false
 		bool Queue_empty();
+
+		// add to queue function:
+		// adds the input as the LAST element in the queue.
+		ExecStatus Queue_add(int input);
 };
