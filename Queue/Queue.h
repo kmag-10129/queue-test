@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -14,7 +15,7 @@ class MyQueue
 	private:
 		// vector is used here so that the size of the queue can dynamically change
 		// ie, we can ALWAYS add new integer elements to the queue
-		vector<int> Elements;
+		vector<string> Elements;
 
 	public:
 		// empty constructor
@@ -23,7 +24,7 @@ class MyQueue
 		}
 
 		// constructor for when there's input elements available
-		MyQueue(vector<int> inputElems) {
+		MyQueue(vector<string> inputElems) {
 			Elements = inputElems;
 		}
 
@@ -33,7 +34,13 @@ class MyQueue
 
 		// add to queue function:
 		// adds the input as the LAST element in the queue.
+		// (modified to accept as string input in cpp)
 		ExecStatus Queue_add(int input);
+
+		// add to queue function:
+		// adds the input as the LAST element in the queue.
+		// (overload accepting string input)
+		ExecStatus Queue_add(string input);
 
 		// remove from queue function
 		// removes the FIRST element in the queue.
@@ -43,5 +50,5 @@ class MyQueue
 		int Queue_get_size();
 
 		// get first element in the queue
-		int Queue_at_front();
+		string Queue_at_front();
 };

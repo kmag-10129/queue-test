@@ -35,7 +35,7 @@ namespace QueueTest {
 	TEST(QueueAdd, t_QueueFrontCheckSuccess) {
 		EXPECT_EQ(SUCCESS, test_queue.Queue_add(2)); // add a 2
 		EXPECT_EQ(SUCCESS, test_queue.Queue_add(1)); // add a 1
-		EXPECT_EQ(2, test_queue.Queue_at_front()); // is the element at the front a 2?
+		EXPECT_EQ("2", test_queue.Queue_at_front()); // is the element at the front a 2? modified to check for "2" instead for string compatibility.
 	}
 
 	// more significant test using the prefilled queue:
@@ -45,7 +45,7 @@ namespace QueueTest {
 	// - check the size (should be 3)
 	// - check the first item in the queue (should be five)
 	TEST(EnvQueueTest, t_EnvTest1) {
-		MyQueue env_queue_1({ 2,3,0,4 }); // used for testing with a prefilled queue
+		MyQueue env_queue_1({ "2","3","0","4" }); // used for testing with a prefilled queue
 		EXPECT_FALSE(env_queue_1.Queue_empty()); // this should be false as on initialization queue is {2, 3, 0, 4}
 		EXPECT_EQ(SUCCESS, env_queue_1.Queue_add(1)); // add a 1
 		EXPECT_EQ(SUCCESS, env_queue_1.Queue_add(5)); // add a 5
@@ -56,12 +56,12 @@ namespace QueueTest {
 			EXPECT_EQ(SUCCESS, env_queue_1.Queue_remove());
 		}
 		EXPECT_EQ(3, env_queue_1.Queue_get_size()); // size should be 3
-		EXPECT_EQ(5, env_queue_1.Queue_at_front()); // is the element at the front a 5?
+		EXPECT_EQ("5", env_queue_1.Queue_at_front()); // is the element at the front a 5? modified to check for "5" instead for string compatibility.
 	}
 
 	// next test is with a different data type other than an int as an input
 	TEST(QueueInput, t_StrInput) {
-		EXPECT_EQ(SUCCESS, test_queue.Queue_add("a")); // should work
+		EXPECT_EQ(SUCCESS, test_queue.Queue_add("hello")); // should work
 	}
 }
 
