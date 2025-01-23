@@ -19,5 +19,7 @@ int MyQueue::Queue_get_size() {
 }
 
 ExecStatus MyQueue::Queue_remove() {
-	return FAILURE; // just so that the test can actually run. todo: implement
+	Elements.erase(Elements.begin()); // note that we always want to remove the FIRST element when dequeue-ing.
+	return SUCCESS;
+	//return FAILURE; // just so that the test can actually run. todo: implement
 }

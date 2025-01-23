@@ -28,6 +28,7 @@ namespace QueueTest {
 	// next test is to remove an item from the front of the queue
 	TEST(QueueAdd, t_DequeueElementSuccess) {
 		EXPECT_EQ(SUCCESS, test_queue.Queue_remove());
+		EXPECT_TRUE(test_queue.Queue_empty()); // if the queue is empty once item has been removed then the dequeue worked
 	}
 
 }
