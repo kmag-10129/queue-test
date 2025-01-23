@@ -58,5 +58,10 @@ namespace QueueTest {
 		EXPECT_EQ(3, env_queue_1.Queue_get_size()); // size should be 3
 		EXPECT_EQ(5, env_queue_1.Queue_at_front()); // is the element at the front a 5?
 	}
+
+	// next test is with a different data type other than an int as an input
+	TEST(QueueInput, t_StrInput) {
+		EXPECT_EQ(SUCCESS, test_queue.Queue_add("a")); // should work
+	}
 }
 
