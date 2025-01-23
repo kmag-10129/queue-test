@@ -25,5 +25,10 @@ namespace QueueTest {
 		EXPECT_EQ(1, test_queue.Queue_get_size());
 	}
 
+	// next test is to remove an item from the front of the queue
+	TEST(QueueAdd, t_DequeueElementSuccess) {
+		EXPECT_EQ(SUCCESS, test_queue.Queue_remove());
+	}
+
 }
 

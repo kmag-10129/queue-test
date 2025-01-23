@@ -17,3 +17,7 @@ int MyQueue::Queue_get_size() {
 	return Elements.size();
 	// return 0; // just so that the test can fail. todo: implement
 }
+
+ExecStatus MyQueue::Queue_remove() {
+	return FAILURE; // just so that the test can actually run. todo: implement
+}
